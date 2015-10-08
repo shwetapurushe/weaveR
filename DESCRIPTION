@@ -1,0 +1,9 @@
+Package: weaveR
+Title: html widget of Weave from R
+Version: 0.0.0.9000
+Authors@R: person("Shweta", "Purushe", email = "shwetapurushe@gmail.com", role = c("aut", "cre"))
+Description: This package allows R users to launch Weave (iweave.com) from R. Users can launch Weave using a single command
+ and further visualize their data in a multi-view, linked visualization system.
+Depends: R (>= 3.1.2)
+License: What license is it under? MIT
+LazyData: true
