@@ -22,3 +22,4 @@ Install it from Github after having installed the `devtools` package in R.
  ```
  weaveR(f)
  ```
+ 
