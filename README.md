@@ -1,5 +1,5 @@
 # weaveR
-This is the Weave framework ported as a visualization widger to R using the 'htmlwidgets' framework.
+This is the Weave framework ported as a visualization widget to R using the 'htmlwidgets' framework.
 Weave is a WEb-based Analysis and Visualization Environment. Check it out at [Weave] (http://www.iweave.com).
 
 ##Installation
@@ -16,7 +16,9 @@ Install it from Github after having installed the `devtools` package in R.
  library("weaveR");
  x <- c(1, 2, 4 ,5)
  y <- c(9, 6, 7 ,8)
- f <- data.frame(x, y)     
+ f <- data.frame(x, y)
  ```
  then launch Weave (with a default Scatterplot tool) with this R command
- ```weaveR(f)```
+ ```
+ weaveR(f)
+ ```
