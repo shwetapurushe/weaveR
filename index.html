@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>WeaveR by shwetapurushe</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>WeaveR</h1>
+        <h2>This is the Weave framework ported as a visualization widget to R using the &#39;htmlwidgets&#39; framework.</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/shwetapurushe/weaveR/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/shwetapurushe/weaveR/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/shwetapurushe/weaveR" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="weaver" class="anchor" href="#weaver" aria-hidden="true"><span class="octicon octicon-link"></span></a>weaveR</h1>
+
+<p>This is the Weave framework ported as a visualization widget to R using the 'htmlwidgets' framework.
+Weave is a WEb-based Analysis and Visualization Environment. Check it out at <a href="http://www.iweave.com">Weave</a>.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>I am hosting this package here as it is not available on R (yet!!).
+Install it from Github after having installed the <code>devtools</code> package in R.</p>
+
+<pre><code> library("devtools");
+ devtools::install_github("shwetapurushe/weaveR");
+</code></pre>
+
+<p>And then load the installed weaveR package with these R commands</p>
+
+<pre><code> library("weaveR");
+ x &lt;- c(1, 2, 4 ,5)
+ y &lt;- c(9, 6, 7 ,8)
+ f &lt;- data.frame(x, y)
+</code></pre>
+
+<p>then launch Weave (with a default Scatterplot tool) with this R command</p>
+
+<pre><code> weaveR(f)
+</code></pre>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
