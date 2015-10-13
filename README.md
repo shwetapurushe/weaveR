@@ -3,7 +3,7 @@ This is the Weave framework ported as a visualization widget to R using the 'htm
 Weave is a WEb-based Analysis and Visualization Environment. Check it out at [Weave] (http://www.iweave.com).
 
 ##Installation
-I am hosting this package here as it is not available on R (yet!!).
+I am hosting this package here as it is not available on CRAN (yet!!).
 Install it from Github after having installed the `devtools` package in R.
 
  ```
