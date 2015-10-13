@@ -14,6 +14,9 @@ Install it from Github after having installed the `devtools` package in R.
  And then load the installed weaveR package with these R commands
  ```
  library("weaveR");
+ ```
+ Lets prepare some data to send to Weave    
+ ```
  x <- c(1, 2, 4 ,5)
  y <- c(9, 6, 7 ,8)
  f <- data.frame(x, y)
@@ -22,4 +25,3 @@ Install it from Github after having installed the `devtools` package in R.
  ```
  weaveR(f)
  ```
- 
