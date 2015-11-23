@@ -50,19 +50,50 @@ HTMLWidgets.widget({
           return weave && weave.WeavePath && weave._jsonCall;
       }
 
+      //SCATTER PLOT
       function scatterPlot() {
           if (checkWeaveReady())
             weave.path('SP').request('ScatterPlotTool')
-            .push('children', 'visualization','plotManager', 'plotters', 'plot').push('dataX').setColumn("xTitle", "myData").pop().pop()
-            .push('children', 'visualization','plotManager', 'plotters', 'plot').push('dataY').setColumn("yTitle", "myData");
+            .state({ panelX : "0%", panelY : "0%"})
+            .push('children', 'visualization','plotManager', 'plotters', 'plot').push('dataX').setColumn("x", "myData").pop().pop()
+            .push('children', 'visualization','plotManager', 'plotters', 'plot').push('dataY').setColumn("y", "myData");
 
           else
               setTimeout(scatterPlot, 100);
       }
 
+      //BARCHART
+      function barChart (){
+          if(checkWeaveReady()){
+              //TODO use setColumns (last minute)
+              weave.path('BC').request('CompoundBarChartTool')
+              .state({ panelX : "0%", panelY : "50%"})
+            .push('children', 'visualization', 'plotManager', 'plotters', 'plot')
+            .push('heightColumns').push('ReferencedColumn').setColumn('x', 'myData').pop()
+            .push('ReferencedColumn').setColumn('y', 'myData');
+          }
+          else
+              setTimeout(barChart, 100)
+      }
+
+      //DATATABLE
+      function dataTable (){
+          if(checkWeaveReady()){
+              //TODO use setColumns (last minute)
+              weave.path('DT').request('AdvancedDataTableTool')
+                  .state({ panelX : "50%", panelY : "50%"})
+                  .push('columns')
+                  .push('ReferencedColumn').setColumn('x', 'myData').pop()
+                  .push('ReferencedColumn').setColumn('y', 'myData');
+          }
+          else
+              setTimeout(dataTable, 100)
+      }
+
+
       function setColor(){
           if(checkWeaveReady())
-              weave.path('defaultColorDataColumn').setColumn("xTitle", "myData");
+              weave.path('defaultColorDataColumn').setColumn("x", "myData");
           else
               setTimeout(setColor, 100)
       }
@@ -70,7 +101,7 @@ HTMLWidgets.widget({
       function create_CSV_dataSource(cols){
           if(checkWeaveReady()){
             //1. formatting for Weave
-            var dCols = [cols.xTitle, cols.yTitle];//hard coded for now
+            var dCols = [cols.x, cols.y];//hard coded for now
             var columnNames = Object.keys(cols);//column titles
             var csvData = [];
             var rowCounter = 0;
@@ -117,8 +148,10 @@ HTMLWidgets.widget({
       /*** Weave function calls **/
       //1. format the data from R and create CSVDataSource
       create_CSV_dataSource(x.columns);
-      //2. create scatter plot
+      //2. create visualizations
       scatterPlot();
+      barChart();
+      dataTable();
       //3. color it
       setColor();
 
