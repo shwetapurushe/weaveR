@@ -19,7 +19,7 @@ HTMLWidgets.widget({
           params.bgcolor = "#869ca7";
           params.allowscriptaccess = "sameDomain";
           params.allowfullscreen = "true";
-          params.base = window.location.protocol+"//"+window.location.host;
+          //params.base = window.location.protocol+"//"+window.location.host;
           var attributes = {};
           attributes.id = "weave";
           attributes.name = "weave";
@@ -80,11 +80,11 @@ HTMLWidgets.widget({
       function dataTable (){
           if(checkWeaveReady()){
               //TODO use setColumns (last minute)
-              weave.path('DT').request('AdvancedDataTableTool')
-                  .state({ panelX : "50%", panelY : "50%"})
+              weave.path('DT').request('TableTool')
+                  .state({ panelX : "50%", panelY : "0%"})
                   .push('columns')
-                  .push('ReferencedColumn').setColumn('x', 'myData').pop()
-                  .push('ReferencedColumn').setColumn('y', 'myData');
+                  .push('ReferencedColumn3').setColumn('x', 'myData').pop()
+                  .push('ReferencedColumn4').setColumn('y', 'myData');
           }
           else
               setTimeout(dataTable, 100)
@@ -150,7 +150,7 @@ HTMLWidgets.widget({
       create_CSV_dataSource(x.columns);
       //2. create visualizations
       scatterPlot();
-      barChart();
+     // barChart();
       dataTable();
       //3. color it
       setColor();
