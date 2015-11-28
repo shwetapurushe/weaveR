@@ -20,6 +20,7 @@ HTMLWidgets.widget({
           params.allowscriptaccess = "sameDomain";
           params.allowfullscreen = "true";
           //params.base = window.location.protocol+"//"+window.location.host;
+          params.base = "lib/weave-2.2";
           var attributes = {};
           attributes.id = "weave";
           attributes.name = "weave";
